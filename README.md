@@ -10,7 +10,7 @@ You can use these tags as a version of PHP.
 
 ```
 app:
-    image: dala00/laravel-apache:7.2
+    image: dala00/laravel:7.2
     volumes:
       - .:/var/www/app
     ports:
