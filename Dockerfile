@@ -1,6 +1,7 @@
-FROM php:7.2-apache
+FROM php:7.3-apache
 
-RUN apt-get update && apt-get install -y git zlib1g-dev libxml2-dev
+RUN apt-get update && apt-get install -y git libzip-dev libxml2-dev
+RUN docker-php-ext-configure zip --with-libzip
 RUN docker-php-ext-install pdo_mysql mbstring zip xml
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
